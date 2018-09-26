@@ -54,16 +54,27 @@ public class ArrayDemo {
     }
   }
 
-  // public static int[][] fill2DCopy(int[][] vals){
-  //
-  // }
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] ans = new int[vals.length][vals[0].length];
+    for (int i=0; i<vals.length; i++) {
+      for (int j=0; j<vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          ans[i][j] = 3;
+        } else {
+          ans[i][j] = 1;
+        }
+      }
+    }
+    return ans;
+  }
 
   public static void main(String[]args) {
     int[] anArray = {1, 2, 3};
-    int[][] multi = {{1,2,0}, {4,5,0}, {7,8,0}};
+    int[][] multi = {{1,-2,0}, {-4,-5,0}, {7,8,0}};
 
     printArray(anArray);
     printArray(multi);
+    printArray(fill2DCopy(multi));
     System.out.println(countZeros2D(multi));
     fill2D(multi);
     printArray(multi);
