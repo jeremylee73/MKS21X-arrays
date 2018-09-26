@@ -30,10 +30,20 @@ public class ArrayDemo {
     System.out.println("]");
   }
 
-  // public static int countZeros2D(int[][] nums){
-  //   return null;
-  // }
-  //
+  public static int countZeros2D(int[][] nums){
+    int ans = 0;
+
+    for (int i=0; i<nums.length; i++) {
+      for (int j=0; j<nums[i].length; j++) {
+        if (nums[i][j] == 0) {
+          ans += 1;
+        }
+      }
+    }
+
+    return ans;
+  }
+
   // public static void fill2D(int[][] vals){
   //   return null;
   // }
@@ -44,9 +54,10 @@ public class ArrayDemo {
 
   public static void main(String[]args) {
     int[] anArray = {1, 2, 3};
-    int[][] multi = {{1,2,3}, {4,5,6}, {7,8,9}};
+    int[][] multi = {{1,2,0}, {4,5,0}, {7,8,0}};
 
     printArray(anArray);
     printArray(multi);
+    System.out.println(countZeros2D(multi));
   }
 }
