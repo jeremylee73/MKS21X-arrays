@@ -1,7 +1,15 @@
 public class ArrayDemo {
-  // public static void printArray(int[]ary){
-  //
-  // }
+  public static void printArray(int[]ary){
+    System.out.print("[");
+    for (int i=0; i<ary.length; i++) {
+      if (i == ary.length - 1) {
+        System.out.print("" + ary[i]);
+      } else {
+        System.out.print("" + ary[i] + ",");
+      }
+    }
+    System.out.println("]");
+  }
 
   // public static void printArray(int[][]ary){
   //   return null;
@@ -20,6 +28,9 @@ public class ArrayDemo {
   // }
 
   public static void main(String[]args) {
-    System.out.println("Hello World");
+    int[] anArray = {1, 2, 3};
+    int[][] multi = {{1,2,3}, {4,5,6}, {7,8,9}};
+
+    printArray(anArray);
   }
 }
